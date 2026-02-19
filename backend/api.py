@@ -9,7 +9,7 @@ load_dotenv()
 
 # 🔹 Récupérer la clé Azure depuis l'environnement
 AZURE_KEY = os.getenv("AZURE_KEY")
-AZURE_ENDPOINT = "https://exxvision.cognitiveservices.azure.com/"
+AZURE_ENDPOINT = "https://evision.cognitiveservices.azure.com/"
 
 app = FastAPI()
 
