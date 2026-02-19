@@ -34,7 +34,7 @@ Le projet est divisé en deux parties :
 #### 1️⃣ Cloner le projet
 
 ```bash
-git clone https://github.com/Zakariae-212/Projet_OCR_vers2.git
+git clone https://github.com/walidtamairt/PROJET_OCR.git
 cd Projet_OCR_vers2
 ```
 
