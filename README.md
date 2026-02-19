@@ -1,79 +1,64 @@
-# 📄 DocScan
+📄 DocScan : Intelligence Artificielle & Extraction OCR (Protocol MCP)
+DocScan est une application avancée d'extraction de texte (OCR) exploitant les services cognitifs d'Azure. Ce projet démontre l'intégration d'un workflow d'IA générative moderne en exposant ses fonctionnalités via le Model Context Protocol (MCP), permettant ainsi à des agents IA (Claude, Copilot) de piloter l'application de manière autonome.
 
-## 🌍 Transformez vos documents en texte avec facilité !
+🌟 Points Forts
+Interface Web Moderne : Frontend épuré avec design "Glassmorphism" pour une expérience utilisateur fluide.
 
-### 📝 Description du projet
+Agentic AI Ready : Premier pas vers les agents autonomes grâce à l'implémentation du standard MCP.
 
-DocScan est une application web qui permet d'extraire le texte d’images et de PDF grâce à l’OCR fourni par Microsoft Azure (Azure AI Services).
+Logique Découplée : Architecture modulaire séparant le moteur OCR de l'interface de transport (Web vs Agent).
 
-L’objectif du projet est de fournir une interface simple et intuitive pour :
+🏗️ Structure du Projet
+Plaintext
+PROJET_OCR_VERS2/
+├── backend/
+│   ├── api.py           # Serveur FastAPI (Interface Web)
+│   ├── mcp_server.py    # Serveur MCP (Interface Agents IA)
+│   ├── ocr_logic.py     # Cœur métier (Appels Azure Vision)
+│   └── .env             # Configuration (Clés API - Ignoré par Git)
+├── frontend/
+│   ├── index.html       # Interface utilisateur HTML5
+│   ├── style.css        # Design moderne & Responsive
+│   └── script.js        # Logique de communication Frontend
+└── README.md
+🛠️ Installation et Configuration
+Cloner le dépôt :
 
-- Scanner un document
-- Visualiser le texte extrait
-- Modifier le texte
-- Exporter le contenu
-- Afficher la langue détectée du document
-
-Le projet est divisé en deux parties :
-
-- 🎨 **Frontend** : interface utilisateur en HTML, CSS et JavaScript  
-- ⚙️ **Backend** : API FastAPI qui communique avec le service Azure OCR
-
-### ⚡ Fonctionnalités
-
-- 📤 Importer une image ou un PDF  
-- 🔍 Analyser le document (simulation ou réel via Azure OCR)  
-- 📄 Visualiser le texte extrait  
-- 🌍 Afficher la langue détectée du document  
-- ✏️ Modifier le texte directement dans l’interface  
-- 📋 Copier le texte  
-- 💾 Télécharger le texte en `.txt`
-
-### ⚙️ Installation et utilisation
-
-#### 1️⃣ Cloner le projet
-
-```bash
+Bash
 git clone https://github.com/walidtamairt/PROJET_OCR.git
-cd Projet_OCR_vers2
-```
+cd PROJET_OCR
+Installer les dépendances :
 
-## 2️⃣ Préparer le backend
+Bash
+pip install -r backend/requirements.txt
+Configurer les variables d'environnement :
+Créez un fichier .env dans le dossier backend/ :
 
-✅ **Prérequis** : Python 3.11 ou supérieur
+Plaintext
+AZURE_KEY=votre_cle_subscription
+AZURE_ENDPOINT=https://votre_ressource.cognitiveservices.azure.com/
+🚀 Utilisation
+Mode Web (Utilisateur Humain)
+Lancez l'API pour alimenter le frontend :
 
-**Installer les dépendances :**
+Bash
+uvicorn backend.api:app --reload
+Accédez ensuite au fichier index.html pour importer vos documents manuellement.
 
-```bash
-cd backend
-pip install -r requirements.txt
-```
+Mode Agent (Assistant IA)
+Pour tester l'exposition des outils via l'inspecteur MCP :
 
-**Créer un fichier .env :**
-```bash
-AZURE_KEY=VOTRE_CLE_AZURE_ICI
-```
-**Lancer le serveur FastAPI :**
-```bash
-uvicorn api:app --reload --port 8000
-```
+Bash
+npx @modelcontextprotocol/inspector python backend/mcp_server.py
+Tools : analyze_document_url (Extraction de texte via URL).
 
-**L’API sera accessible sur :**
-```bash
-http://127.0.0.1:8000/docs
-```
+Resources : config://info (Statut du service).
 
-## 3️⃣ Préparer le frontend
+Prompts : Modèles pour la transcription et la synthèse automatique.
 
-**Rester dans le dossier racine du projet.**
+🧠 Expertise IA Acquise
+IA Générative : Optimisation de modèles (LLM), ingénierie de prompt et workflows IA.
 
-**Lancer un serveur local pour tester le frontend :**
+Interopérabilité : Mise en œuvre du protocole MCP pour l'orchestration d'agents.
 
-```bashcd frontend
-python -m http.server 5500
-```
-
-**Ouvrir un navigateur et aller sur :**
-```bash
-http://localhost:5500
-```
+Backend Engineering : Création d'APIs robustes avec FastAPI et intégration de services cloud.
