@@ -149,4 +149,4 @@ npx @modelcontextprotocol/inspector python backend/mcp_server.py
 
 ---
 
-*Projet réalisé dans le cadre du Bachelor IA & Data — ECE Paris*
+*Projet réalisé dans le cadre du Bachelor IA & Data — ECE Bordeaux*
