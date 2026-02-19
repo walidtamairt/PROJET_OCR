@@ -8,19 +8,7 @@ Agentic AI Ready : Premier pas vers les agents autonomes grâce à l'implémenta
 
 Logique Découplée : Architecture modulaire séparant le moteur OCR de l'interface de transport (Web vs Agent).
 
-🏗️ Structure du Projet
-Plaintext
-PROJET_OCR_VERS2/
-├── backend/
-│   ├── api.py           # Serveur FastAPI (Interface Web)
-│   ├── mcp_server.py    # Serveur MCP (Interface Agents IA)
-│   ├── ocr_logic.py     # Cœur métier (Appels Azure Vision)
-│   └── .env             # Configuration (Clés API - Ignoré par Git)
-├── frontend/
-│   ├── index.html       # Interface utilisateur HTML5
-│   ├── style.css        # Design moderne & Responsive
-│   └── script.js        # Logique de communication Frontend
-└── README.md
+
 🛠️ Installation et Configuration
 Cloner le dépôt :
 
